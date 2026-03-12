@@ -1,12 +1,203 @@
-# Salin isi ~/.aerospace.toml kamu ke sini
-# Jalankan dulu: cat ~/.aerospace.toml
-# lalu paste hasilnya di sini
+# /* ---- 💫 Inspired by JaKooLit Hyprland Dots 💫 ---- */
+# AeroSpace config for macOS — dniel
+# Modifier utama: alt (Option ⌥) — tidak tabrakan dengan shortcut macOS
+# Docs: https://nikitabobko.github.io/AeroSpace/guide
 
-# Contoh minimal:
-# [gaps]
-# inner.horizontal = 8
-# inner.vertical   = 8
-# outer.left       = 8
-# outer.right      = 8
-# outer.top        = 8
-# outer.bottom     = 8
+# ─────────────────────────────────────────────────────────────────────────────
+# GENERAL
+# ─────────────────────────────────────────────────────────────────────────────
+after-login-command = []
+after-startup-command = []
+start-at-login = true
+
+# Gaps — mirip hyprland gaps_in / gaps_out
+[gaps]
+inner.horizontal = 8
+inner.vertical   = 8
+outer.left       = 8
+outer.right      = 8
+outer.top        = 8
+outer.bottom     = 8
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MAIN MODE
+# ─────────────────────────────────────────────────────────────────────────────
+[mode.main.binding]
+
+# ── Window Management ────────────────────────────────────────────────────────
+# hyprland: $mainMod, Q, killactive
+alt-q = 'close'
+
+# hyprland: $mainMod, F, fullscreen
+alt-f = 'fullscreen'
+
+# hyprland: $mainMod, Space, togglefloating
+alt-shift-space = 'layout floating tiling'
+
+# hyprland: tile layout
+alt-t = 'layout tiles horizontal vertical'
+
+# accordion / stacked layout
+alt-e = 'layout accordion horizontal vertical'
+
+# ── Focus Window — vim-style ─────────────────────────────────────────────────
+# hyprland: $mainMod, H/J/K/L, movefocus
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Arrow key alternative
+alt-left  = 'focus left'
+alt-down  = 'focus down'
+alt-up    = 'focus up'
+alt-right = 'focus right'
+
+# ── Move Window — vim-style ──────────────────────────────────────────────────
+# hyprland: $mainMod SHIFT, H/J/K/L, movewindow
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# Arrow key alternative
+alt-shift-left  = 'move left'
+alt-shift-down  = 'move down'
+alt-shift-up    = 'move up'
+alt-shift-right = 'move right'
+
+# ── Resize Mode ───────────────────────────────────────────────────────────────
+# hyprland: $mainMod, R, submap, resize
+alt-r = 'mode resize'
+
+# ── Workspaces ───────────────────────────────────────────────────────────────
+# hyprland: $mainMod, 1-9, workspace
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+# ── Move Window ke Workspace ─────────────────────────────────────────────────
+# hyprland: $mainMod SHIFT, 1-9, movetoworkspace
+alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
+alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
+alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+
+# ── Workspace Navigation ──────────────────────────────────────────────────────
+# hyprland: $mainMod, mouse scroll, cycle workspace
+alt-tab       = 'workspace --wrap-around next'
+alt-shift-tab = 'workspace --wrap-around prev'
+
+# ── Multi-Monitor ─────────────────────────────────────────────────────────────
+# hyprland: $mainMod, comma/period, focusmonitor
+alt-period = 'focus-monitor --wrap-around next'
+alt-comma  = 'focus-monitor --wrap-around prev'
+
+# hyprland: $mainMod SHIFT, comma/period, movewindow monitor
+alt-shift-period = 'move-node-to-monitor --wrap-around next'
+alt-shift-comma  = 'move-node-to-monitor --wrap-around prev'
+
+# ── Reload Config ─────────────────────────────────────────────────────────────
+# hyprland: $mainMod SHIFT, R, exec, hyprctl reload
+alt-shift-r = 'reload-config'
+
+# ── Buka Aplikasi ─────────────────────────────────────────────────────────────
+# hyprland: $mainMod, Return, exec, $term
+alt-enter = ['exec-and-forget open -a Ghostty']
+
+# hyprland: $mainMod, D, exec, rofi → Raycast di macOS
+alt-d = ['exec-and-forget open -a Raycast']
+
+# Browser
+alt-shift-b = ['exec-and-forget open -a Firefox']
+
+# File manager
+alt-shift-e = ['exec-and-forget open -a Finder']
+
+# ─────────────────────────────────────────────────────────────────────────────
+# RESIZE MODE — mirip hyprland submap resize
+# ─────────────────────────────────────────────────────────────────────────────
+[mode.resize.binding]
+
+# vim-style resize
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+
+# Arrow key alternative
+left  = 'resize width -50'
+down  = 'resize height +50'
+up    = 'resize height -50'
+right = 'resize width +50'
+
+# Keluar resize mode
+esc   = 'mode main'
+enter = 'mode main'
+alt-r = 'mode main'
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AUTO-ASSIGN APP KE WORKSPACE
+# mirip hyprland windowrules workspace
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Calendar
+[[on-window-detected]]
+if.app-id = 'com.cron.electron'
+run = "move-node-to-workspace 1"
+
+# Terminal
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = "move-node-to-workspace 2"
+
+# Browser
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace 3"
+
+# Alternate Browser
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = "move-node-to-workspace 3"
+
+# Safari Browser
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = "move-node-to-workspace 3"
+
+# Slack
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = "move-node-to-workspace 4"
+
+# Whatsapp
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = "move-node-to-workspace 4"
+
+# Telegram
+[[on-window-detected]]
+if.app-id = 'ru.keepcoder.Telegram'
+run = "move-node-to-workspace 4"
+
+# Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = "move-node-to-workspace 5"
+
+# Notion
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = "move-node-to-workspace 5"

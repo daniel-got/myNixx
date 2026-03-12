@@ -83,6 +83,7 @@
       "raycast"
       "nikitabobko/tap/aerospace"
       "maccy"
+      "aldente"
     ];
   };
 

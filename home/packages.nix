@@ -16,6 +16,7 @@
     glow               # render markdown di terminal
     fastfetch
     aria2
+    smartmontools
 
 
     # ── 2. Golang ─────────────────────────────────────────────────────────
