@@ -14,11 +14,15 @@
     unzip
     delta              # diff viewer yang lebih baik
     glow               # render markdown di terminal
+    fastfetch
+    aria2
+
 
     # ── 2. Golang ─────────────────────────────────────────────────────────
     go
     gopls              # Go LSP
-    delve              # Go debugger
+    delve
+    # Go debugger
 
     # ── 3. Node.js / Web ──────────────────────────────────────────────────
     nodejs_22

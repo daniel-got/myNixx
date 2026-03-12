@@ -8,6 +8,7 @@
     ./git.nix
     ./aerospace.nix
     ./xdg.nix
+    ./zoxide.nix
   ];
 
   home.stateVersion = "24.05";
@@ -25,12 +26,4 @@
     "${pkgs.jdk21}/bin"
   ];
 
-  # ──────────────────────────────────────────────────────────────────────────
-  # ZOXIDE  (cd replacement)
-  # ──────────────────────────────────────────────────────────────────────────
-  programs.zoxide = {
-    enable             = true;
-    enableZshIntegration = true;
-    options            = [ "--cmd cd" ];
-  };
 }
