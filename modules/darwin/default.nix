@@ -65,6 +65,7 @@
       "lazygit"
       "tea"
       "ghostscript"
+      "mole"
     ];
 
     casks = [
