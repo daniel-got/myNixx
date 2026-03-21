@@ -45,6 +45,7 @@
   system.defaults = {
     dock.autohide               = true;
     finder.AppleShowAllExtensions = true;
+    finder.CreateDesktop = false;
   };
 
   # ──────────────────────────────────────────────────────────────────────────
