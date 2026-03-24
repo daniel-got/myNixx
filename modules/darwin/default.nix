@@ -86,6 +86,7 @@
       "nikitabobko/tap/aerospace"
       "maccy"
       "aldente"
+      "cleanupbuddy"
     ];
   };
 
